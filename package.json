@@ -1,0 +1,45 @@
+{
+  "name": "dsh-notify-sound",
+  "version": "0.1.0",
+  "description": "消息提示音：一轮回复完成、或需要你授权/回答时播放本机 Codex 自带的提示音（codex-notification.wav）。Message sound for dsh using Codex's own completion chime.",
+  "type": "module",
+  "license": "MIT",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "icon.svg",
+    "assets/*"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "notification",
+    "sound",
+    "codex"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-session"
+      ]
+    }
+  }
+}
