@@ -1,5 +1,5 @@
 {
-  "name": "dsh-notify-sound",
+  "name": "@anze225/dsh-notify-sound",
   "version": "0.1.0",
   "description": "消息提示音：一轮回复完成、或需要你授权/回答时播放本机 Codex 自带的提示音（codex-notification.wav）。Message sound for dsh using Codex's own completion chime.",
   "type": "module",
@@ -50,5 +50,8 @@
   "homepage": "https://github.com/anze225/dsh-notify-sound#readme",
   "bugs": {
     "url": "https://github.com/anze225/dsh-notify-sound/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

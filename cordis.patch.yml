@@ -2,4 +2,4 @@
 # It lives in the browser; the host entry is a no-op loader placeholder.
 - insert:
     - id: dsh-notify-sound
-      name: 'dsh-notify-sound'
+      name: '@anze225/dsh-notify-sound'

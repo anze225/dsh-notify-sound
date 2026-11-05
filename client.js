@@ -6,7 +6,7 @@
  * exactly Codex's, self-contained, no external audio files.
  */
 window.__ModuleLoader__.load({
-	id: 'dsh-notify-sound', // ui-copy-ignore
+	id: '@anze225/dsh-notify-sound', // ui-copy-ignore
 	factory: (require) => {
 		const React = require('react');
 		const h = React.createElement;
@@ -317,7 +317,7 @@ window.__ModuleLoader__.load({
 
 		/* ---------------- plugin ---------------- */
 		return {
-			name: 'dsh-notify-sound', // ui-copy-ignore
+			name: '@anze225/dsh-notify-sound', // ui-copy-ignore
 			inject: ['slots', 'uiSession'], // ui-copy-ignore
 			apply(ctx) {
 				try {

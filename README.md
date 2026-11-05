@@ -9,7 +9,8 @@
 
 一轮 AI 回复结束时，或应用需要你介入（授权 / 审批 / 提问 / 计划确认）时，在 dsh 的 Web / 桌面界面里播放 Codex 那声清脆的“叮”。
 
-仓库：<https://github.com/anze225/dsh-notify-sound>
+仓库：<https://github.com/anze225/dsh-notify-sound>  
+包名：`@anze225/dsh-notify-sound`
 
 ## 功能
 
@@ -24,8 +25,8 @@
 
 作为一个 dsh 的 profile 插件（web 客户端插件）安装：
 
-1. 把本包放到 profile 的 `node_modules/dsh-notify-sound`（或在 profile 的 `package.json` 里以 `file:` 依赖安装）。
-2. 在 profile 的 `package.json` 的 `dsh.profile.bundles` 中加入 `dsh-notify-sound`。
+1. 把本包放到 profile 的 `node_modules/@anze225/dsh-notify-sound`（或在 profile 的 `package.json` 里以 `file:` 依赖安装）。
+2. 在 profile 的 `package.json` 的 `dsh.profile.bundles` 中加入 `@anze225/dsh-notify-sound`。
 3. 重启 DeepSeek Harness（新增客户端插件会改变启动清单）。
    之后修改代码，可用 dsh-unlag 的“换掉插件代码 / 重建页面”使其生效。
 
