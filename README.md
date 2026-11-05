@@ -1,5 +1,9 @@
 # dsh-notify-sound
 
+![license](https://img.shields.io/badge/license-MIT-blue)
+![dsh](https://img.shields.io/badge/dsh-%3E%3D0.2.0--rc.1%20%3C0.3.0-8b5cf6)
+![platform](https://img.shields.io/badge/platform-web%20%2F%20desktop-2ea44f)
+
 > dsh（DeepSeek Harness）的消息提示音插件。播放的是 **OpenAI Codex 自带的完成提示音**（`codex-notification.wav`），不是自造音效。
 
 一轮 AI 回复结束时，或应用需要你介入（授权 / 审批 / 提问 / 计划确认）时，在 dsh 的 Web / 桌面界面里播放 Codex 那声清脆的“叮”。
