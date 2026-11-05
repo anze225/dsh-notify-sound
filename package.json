@@ -41,5 +41,14 @@
         "@deepseek-ai/dsh-client-ui-session"
       ]
     }
+  },
+  "author": "anze225-max (https://github.com/anze225-max)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anze225-max/dsh-notify-sound.git"
+  },
+  "homepage": "https://github.com/anze225-max/dsh-notify-sound#readme",
+  "bugs": {
+    "url": "https://github.com/anze225-max/dsh-notify-sound/issues"
   }
 }
