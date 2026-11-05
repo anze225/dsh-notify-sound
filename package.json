@@ -42,13 +42,13 @@
       ]
     }
   },
-  "author": "anze225-max (https://github.com/anze225-max)",
+  "author": "anze225 (https://github.com/anze225)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anze225-max/dsh-notify-sound.git"
+    "url": "git+https://github.com/anze225/dsh-notify-sound.git"
   },
-  "homepage": "https://github.com/anze225-max/dsh-notify-sound#readme",
+  "homepage": "https://github.com/anze225/dsh-notify-sound#readme",
   "bugs": {
-    "url": "https://github.com/anze225-max/dsh-notify-sound/issues"
+    "url": "https://github.com/anze225/dsh-notify-sound/issues"
   }
 }
