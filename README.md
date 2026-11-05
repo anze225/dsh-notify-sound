@@ -1,6 +1,6 @@
 # dsh-notify-sound
 
-![version](https://img.shields.io/badge/version-0.1.0-3b82f6)
+![version](https://img.shields.io/github/v/release/anze225/dsh-notify-sound)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 ![dsh](https://img.shields.io/badge/dsh-%3E%3D0.2.0--rc.1%20%3C0.3.0-8b5cf6)
 ![platform](https://img.shields.io/badge/platform-web%20%2F%20desktop-2ea44f)
