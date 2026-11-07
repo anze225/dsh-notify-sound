@@ -171,8 +171,27 @@ window.__ModuleLoader__.load({
 		const originOf = (ctx, id) => {
 			try { const byId = ctx.uiSession.sessions.list.getSnapshot().byId; return byId[id] ? byId[id].origin : undefined; } catch { return undefined; }
 		};
-		const currentKey = (ctx) => {
-			try { const cur = ctx.uiSession.current.getSnapshot(); return cur ? cur.key : undefined; } catch { return undefined; }
+		/**
+		 * The session the main view is currently showing. Prefer the main binding's key;
+		 * fall back to the session retained by the main view. Returns undefined when it
+		 * cannot be determined — callers treat "unknown" as foreground so a missing
+		 * binding never turns a foreground turn into a false background ding.
+		 */
+		const currentSessionId = (ctx) => {
+			try {
+				const cur = ctx.uiSession.current.getSnapshot();
+				if (cur) {
+					if (typeof cur.key === 'string' && cur.key) return cur.key;
+					if (typeof cur.sessionId === 'string' && cur.sessionId) return cur.sessionId;
+				}
+			} catch { /* ignore */ }
+			try {
+				const byId = ctx.uiSession.sessions.list.getSnapshot().byId || {};
+				for (const [sid, row] of Object.entries(byId)) {
+					if (row && row.retainedBy && (row.retainedBy.mainView ?? 0) > 0) return sid;
+				}
+			} catch { /* ignore */ }
+			return undefined;
 		};
 		const isBackground = () => {
 			try {
@@ -208,7 +227,15 @@ window.__ModuleLoader__.load({
 					const wasPending = prevPending.get(id) === true;
 					if (wasRunning && !running) {
 						if (cfg.completion === 'always') playDone = true;
-						else if (cfg.completion === 'background' && (isBackground() || id !== currentKey(ctx))) playDone = true;
+						else if (cfg.completion === 'background') {
+							// Ring only in the background, or when the turn that finished is not the
+							// session on screen. An unknown current session counts as foreground.
+							if (isBackground()) playDone = true;
+							else {
+								const onScreen = currentSessionId(ctx);
+								if (onScreen !== undefined && id !== onScreen) playDone = true;
+							}
+						}
 					}
 					if (!wasPending && pending) playNeed = true;
 				}
